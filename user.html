@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>商城</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css"/>
+		<style>
+			p {
+				text-indent: 22px;
+			}
+			span.mui-icon {
+				font-size: 14px;
+				color: #007aff;
+				margin-left: -15px;
+				padding-right: 10px;
+			}
+			#info {
+				padding: 20px 10px;
+			}
+			.des {
+				margin: .5em 0;
+			}
+			.des>li {
+				font-size: 14px;
+				color: #8f8f94;
+			}
+			.mui-content-padded .user{
+				width:90px;
+				height: 90px;
+				margin:0 auto 20px;
+				position:relative;
+			}
+			.mui-btn-block{
+				margin-bottom: 0;
+			}
+			.mui-bt{
+				width:90px;
+				height: 90px;
+				border:0;
+				border-radius: 50%;
+				overflow: hidden;
+				padding:0;
+			}
+			.mui-bt img{
+				width:90px;
+				height: 90px;
+			}
+			.user span{
+				display: block;
+				position:absolute;
+				right:0px;	
+				bottom:0px;
+				z-index: 9999;
+				font-size: 40px;
+				cursor: pointer;
+			}
+			.mui-content-padded{
+				text-align: center;
+			}
+			.mui-content-padded p{
+				text-indent: 0;
+			}
+			.mui-content-padded .mui-btn{
+				padding:8px 50px;
+			}
+			span.mui-icon {
+			    margin-left: 0px;
+			    padding-right: 0px;
+			    color:#dd524d;
+			}
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+				border:0;
+			}
+			.mui-navigate-right::after{
+				right: 15px;
+				content: '';
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content" style="padding-top:30px; background: #fff;">
+			<div class="mui-content-padded">
+				<div class="user">
+					<a href="#picture" class="mui-bt mui-btn-primary mui-btn-block mui-btn-outlined"><img src="images/muwu.jpg" alt="" /></a>
+					<span class="mui-icon mui-icon-camera" style="color:#cacaca;"></span>
+				</div>
+				<p>Hi,你好</p>
+				<p>登录xxx和好友们一起互动吧！</p>
+				<a href="login.html"><button type="button" class="mui-btn mui-btn-danger">点击登录</button></a>
+				<p id="info"></p>
+			</div>
+		</div>
+
+		<div id="picture" class="mui-popover mui-popover-action mui-popover-bottom">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#">拍照</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="#">选取现有的</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#picture"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+
+			<div class="mui-content">
+		        <ul class="mui-table-view mui-grid-view mui-grid-9" style="background-color: #fff;"> 
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <span class="mui-icon mui-icon-chatboxes"></span>
+		                    <div class="mui-media-body">评论</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <span class="mui-icon mui-icon-star"></span>
+		                    <div class="mui-media-body">收藏</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <span class="mui-icon mui-icon-flag"></span>
+		                    <div class="mui-media-body">兑换中心</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <span class="mui-icon mui-icon-chat"></span>
+		                    <div class="mui-media-body">爆料</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <span class="mui-icon mui-icon-compose"></span>
+		                    <div class="mui-media-body">投稿</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <span class="mui-icon mui-icon-bars"></span>
+		                    <div class="mui-media-body">消息</div></a></li>
+		            
+		        </ul> 
+		</div>
+
+			<ul class="mui-table-view" style="margin-top:15px; border:0;">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" href="reg.html">
+						<span class="mui-pull-right" style="color:#f22544;">注册领礼包 <i class="mui-icon mui-icon-arrowright" style="color: #8f8f94;"></i></span>	  <i class="mui-icon mui-icon-home" style="color:#f22544;"></i> 我的礼包  
+					</a>
+				</li>
+			</ul>
+
+
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script>
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+		mui('body').on('shown', '.mui-popover', function(e) {
+			//console.log('shown', e.detail.id);//detail为当前popover元素
+		});
+		mui('body').on('hidden', '.mui-popover', function(e) {
+			//console.log('hidden', e.detail.id);//detail为当前popover元素
+		});
+		var info = document.getElementById("info");
+		mui('body').on('tap', '.mui-popover-action li>a', function() {
+			var a = this,
+				parent;
+			//根据点击按钮，反推当前是哪个actionsheet
+			for (parent = a.parentNode; parent != document.body; parent = parent.parentNode) {
+				if (parent.classList.contains('mui-popover-action')) {
+					break;
+				}
+			}
+			//关闭actionsheet
+			//mui('#' + parent.id).popover('toggle');
+			//info.innerHTML = "你刚点击了\"" + a.innerHTML + "\"按钮";
+		})
+	</script>
+
+</html>

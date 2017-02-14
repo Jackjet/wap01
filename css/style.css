@@ -1,0 +1,24 @@
+body{
+	background-color: #f4f4f4;
+}
+.mui-bar{
+	background-color:#f04848;
+}
+.mui-title{
+	color:#fff;
+}
+
+.mui-grid-view.mui-grid-normal{
+	background-color: #fff;
+}
+
+.mui-content > .mui-table-view:first-child {
+    margin-top:0;
+}
+
+
+/*list*/
+.mui-table-view .mui-media-object .mui-pull-left {
+    margin-right: 10px;
+ }
+
